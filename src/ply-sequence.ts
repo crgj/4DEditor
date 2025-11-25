@@ -130,7 +130,7 @@ const registerPlySequenceEvents = (events: Events) => {
                 const splat = await events.invoke('scene.assetLoader').load({
                     filename: file.name,
                     contents: file
-                });
+                }); 
 
                 // WDD: 保存序列文件的时候 对照当前场景中splat的高斯点状态
                 // 如果高斯点的状态是被删除的 则不写入文件
