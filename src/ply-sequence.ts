@@ -1,6 +1,7 @@
 import { Events } from './events';
 import { Splat } from './splat';
 import { serializePly } from './splat-serialize';
+import { localize } from './ui/localization';
 import { FileStreamWriter } from './serialize/writer';
 
 import { State } from './splat-state';
@@ -120,9 +121,24 @@ const registerPlySequenceEvents = (events: Events) => {
             return;
         }
     
-        events.fire('startSpinner');
+        events.fire('progressStart', localize('export.export-sequence'));
  
         try { 
+
+            const refPos = sequenceSplat.entity.getLocalPosition().clone();
+            const refRot = sequenceSplat.entity.getLocalRotation().clone();
+            const refScale = sequenceSplat.entity.getLocalScale().clone();
+
+            const progressFunc = (i: number) => {
+                events.fire('progressUpdate', {
+                    text: `${localize('export.exporting')} ${i + 1} / ${sequenceFiles.length}`,
+                    progress: 100 * (i + 1) / sequenceFiles.length
+                });
+            };
+
+            progressFunc(-1);
+
+
             for (let i = 0; i < sequenceFiles.length; i++) {
                 const file = sequenceFiles[i];
                 // WDD: Use the scene's assetLoader to load the splat data into a temporary object.
@@ -141,7 +157,7 @@ const registerPlySequenceEvents = (events: Events) => {
                 const newState = splat.splatData.getProp('state') as Uint8Array;
                
 
-                console.log('state 000',  splat.splatData);
+                //console.log('state 000',  splat.splatData);
 
                 // 2. 将状态数组应用到新加载的 splat 数据上
                 if (oldState) {
@@ -151,14 +167,19 @@ const registerPlySequenceEvents = (events: Events) => {
                      
                 }
 
-
-                console.log('state 111',  splat.splatData);
+                // 3. 将新加载的 splat 应用到当前场景的 splat
+                // 将新加载的 splat 移动到当前场景的 splat 的位置
+                splat.scene = sequenceSplat.scene; 
+                splat.move(refPos, refRot, refScale);
+                 
+      
 
                 // 3. 创建序列化设置，确保在保存时物理移除已删除的点
                 const serializeSettings = {
                     removeInvalid: true
                 };
 
+ 
                 // Get a handle to the output file in the selected directory
                 const fileHandle = await options.dirHandle.getFileHandle(file.name, { create: true });
                 const stream = await fileHandle.createWritable();
@@ -169,13 +190,25 @@ const registerPlySequenceEvents = (events: Events) => {
                     // The settings will ensure deleted splats are not written.
                     await serializePly([splat], serializeSettings, writer);
                 } finally {
+                    progressFunc(i);
                     await writer.close();
                 }
             }
+
+            await events.invoke('showPopup', {
+                type: 'info',
+                header: localize('export.succeeded'),
+                message: localize('export.sequence-success-message')
+            });
         } catch (error) {
             console.error('Error during sequence export:', error);
+            await events.invoke('showPopup', {
+                type: 'error',
+                header: localize('export.failed'),
+                message: `'${error.message ?? error}'`
+            });
         } finally {
-            events.fire('stopSpinner');
+            events.fire('progressEnd');
         }
     });
 };

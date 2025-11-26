@@ -474,9 +474,7 @@ const serializePly = async (splats: Splat[], serializeSettings: SerializeSetting
     const filter = new GaussianFilter(serializeSettings);
     const totalGaussians = countGaussians(splats, filter);
 
-
-    console.log(333)
-    console.log(totalGaussians)
+ 
 
     if (totalGaussians === 0) {
         return;

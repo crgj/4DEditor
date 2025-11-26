@@ -280,6 +280,13 @@ const localizeInit = () => {
                     //WDD
                     'sequence': 'Sequence',
                     'sequence.action': 'Action...',
+ 
+                    'export.export-sequence': 'Exporting Sequence',
+                    'export.exporting': 'Exporting Sequence',
+                    'export.succeeded': 'Export Sequence',
+                    'export.sequence-success-message': 'All Splats Exported Successfully. ',
+
+
                     // File menu
                     'file': 'File',
                     'file.new': 'New',
@@ -490,6 +497,7 @@ const localizeInit = () => {
                     'export.splats-select': 'Splats',
                     'export.splats-select.all': 'All Splats',
 
+ 
                     // Cursor
                     'cursor.click-to-copy': 'Click to copy',
                     'cursor.copied': 'Copied!',

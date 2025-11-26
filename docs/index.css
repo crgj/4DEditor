@@ -2127,7 +2127,7 @@
   font-family: pc-icon;
   font-weight: bold;
   font-size: 13px;
-  color: #f60;
+  color: rgb(0, 200, 0);
 }
 .panel > .panel-header > .panel-header-label {
   color: #fff;
@@ -2138,7 +2138,7 @@
   font-family: pc-icon;
   font-weight: bold;
   font-size: 13px;
-  color: #f60;
+  color: rgb(0, 200, 0);
   padding: 4px;
   flex-grow: 0;
   flex-shrink: 0;
@@ -2146,7 +2146,7 @@
   text-align: center;
 }
 .panel .panel-header-button svg {
-  color: #f60;
+  color: rgb(0, 200, 0);
 }
 .panel .panel-header-button:hover {
   color: #ff9900;
@@ -2206,7 +2206,7 @@
   border-radius: 2px;
 }
 .menu-row > .pcui-boolean-input.pcui-boolean-input-ticked {
-  background-color: #f60;
+  background-color: rgb(0, 200, 0);
 }
 .menu-row > .pcui-boolean-input.pcui-boolean-input-ticked::after {
   color: #fff;
@@ -2226,7 +2226,7 @@
 
 .menu-row-separator {
   height: 1px;
-  background-color: #555;
+  background-color: #222;
 }
 
 #menu {
@@ -2350,7 +2350,7 @@
   background-color: #b3aaac;
 }
 #view-panel > .view-panel-row > .view-panel-row-toggle.pcui-boolean-input-ticked {
-  background-color: #f60;
+  background-color: rgb(0, 200, 0);
 }
 #view-panel > .view-panel-row > .view-panel-row-toggle.pcui-boolean-input-ticked::after {
   background-color: white;
@@ -2585,7 +2585,7 @@
 }
 .bottom-toolbar-tool.active {
   color: white;
-  background-color: #f60 !important;
+  background-color: rgb(0, 200, 0) !important;
 }
 .bottom-toolbar-tool.active svg {
   color: white;
@@ -2598,10 +2598,10 @@
 }
 
 .bottom-toolbar-toggle.active::before {
-  color: #f60;
+  color: rgb(0, 200, 0);
 }
 .bottom-toolbar-toggle.active svg {
-  color: #f60;
+  color: rgb(0, 200, 0);
 }
 
 #right-toolbar {
@@ -2646,7 +2646,7 @@
   width: 38px;
   height: 2px;
   margin: 4px 0px;
-  background-color: #444;
+  background-color: #111;
 }
 #right-toolbar > .right-toolbar-button svg {
   color: #b3aaac;
@@ -2659,7 +2659,7 @@
 }
 #right-toolbar > .right-toolbar-tool.active {
   color: white;
-  background-color: #f60 !important;
+  background-color: rgb(0, 200, 0) !important;
 }
 #right-toolbar > .right-toolbar-tool.active svg {
   color: white;
@@ -2671,10 +2671,10 @@
   color: #7c7678;
 }
 #right-toolbar > .right-toolbar-toggle.active::before {
-  color: #f60;
+  color: rgb(0, 200, 0);
 }
 #right-toolbar > .right-toolbar-toggle.active svg {
-  color: #f60;
+  color: rgb(0, 200, 0);
 }
 
 .collapsed #right-toolbar {
@@ -2848,7 +2848,7 @@
   text-align: center;
 }
 #popup #popup-dialog #popup-link-row #popup-link-text a {
-  color: #f60;
+  color: rgb(0, 200, 0);
   font-weight: bold;
   font-size: 14px;
   text-decoration-line: none;
@@ -2873,7 +2873,7 @@
 }
 #popup #popup-dialog #popup-buttons .popup-button:hover {
   color: #fff;
-  background-color: #f60;
+  background-color: rgb(0, 200, 0);
 }
 
 #mode-toggle {
@@ -2897,10 +2897,10 @@
   display: none;
 }
 #mode-toggle #centers-icon {
-  color: #f60;
+  color: rgb(0, 200, 0);
 }
 #mode-toggle #rings-icon {
-  color: #f60;
+  color: rgb(0, 200, 0);
 }
 #mode-toggle:hover {
   color: #fff;
@@ -2934,7 +2934,7 @@
 }
 .settings-dialog #dialog #header #icon {
   vertical-align: middle;
-  color: #FFAF50;
+  color: #26ff00;
 }
 .settings-dialog #dialog #header #text {
   margin: 0;
@@ -2996,7 +2996,7 @@
 }
 .settings-dialog #dialog #footer .button:hover {
   color: #fff;
-  background-color: #f60;
+  background-color: rgb(0, 200, 0);
 }
 
 #spinner-container {
@@ -3138,7 +3138,7 @@
 }
 #export-popup #dialog #header #icon {
   vertical-align: middle;
-  color: #FFAF50;
+  color: #26ff00;
 }
 #export-popup #dialog #content {
   min-height: 60px;
@@ -3177,7 +3177,7 @@
 }
 #export-popup #dialog #footer .button:hover {
   color: #fff;
-  background-color: #f60;
+  background-color: rgb(0, 200, 0);
 }
 
 #timeline-panel {
@@ -3273,12 +3273,12 @@
 }
 #timeline-panel > #ticks > #ticks-area > .time-label.cursor {
   color: white;
-  background-color: #f60;
+  background-color: rgb(0, 200, 0);
   padding: 2px 6px;
   border-radius: 4px;
 }
 #timeline-panel > #ticks > #ticks-area > .time-label.key {
-  background-color: #FFAF50;
+  background-color: #26ff00;
   bottom: 22px;
   width: 8px;
   height: 8px;
@@ -3449,7 +3449,7 @@ body {
   cursor: pointer;
 }
 #cursor-label:hover {
-  border: 1px solid #f60;
+  border: 1px solid rgb(0, 200, 0);
   background-color: rgba(0, 0, 0, 0.25);
 }
 
