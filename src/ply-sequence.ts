@@ -119,10 +119,10 @@ const registerPlySequenceEvents = (events: Events) => {
             console.warn('No sequence frames to export.');
             return;
         }
-
+    
         events.fire('startSpinner');
-
-        try {
+ 
+        try { 
             for (let i = 0; i < sequenceFiles.length; i++) {
                 const file = sequenceFiles[i];
                 // WDD: Use the scene's assetLoader to load the splat data into a temporary object.
@@ -131,7 +131,7 @@ const registerPlySequenceEvents = (events: Events) => {
                     filename: file.name,
                     contents: file
                 }); 
-
+ 
                 // WDD: 保存序列文件的时候 对照当前场景中splat的高斯点状态
                 // 如果高斯点的状态是被删除的 则不写入文件
 
